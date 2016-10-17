@@ -41,6 +41,10 @@ def equalize_adapthist(image, ntiles_x=None, ntiles_y=None, clip_limit=0.01,
         Defines the shape of contextual regions used in the algorithm.
         If an integer is given, the shape will be a square of
         sidelength given by this value.
+        If not given, the sidelengths of the shape will be computed by
+        dividing the sidelengths of the input image by the number of tile
+        regions in the correspoinding direction (inputs ntiles_x and ntiles_y,
+        defaulted to 8 if not given), rounded to integers.
     ntiles_x : int, optional (deprecated in favor of ``kernel_size``)
         Number of tile regions in the X direction (horizontal).
     ntiles_y : int, optional (deprecated in favor of ``kernel_size``)
